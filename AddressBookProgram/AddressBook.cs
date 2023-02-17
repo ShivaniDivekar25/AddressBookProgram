@@ -34,12 +34,9 @@ namespace AddressBookProgram
         }
         public void Display()
         {
-            foreach (var contact in contactList)
-            {
-                Console.WriteLine("-------------------------------------");
-                Console.WriteLine("Contact Details" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Zip: " + contact.Zip + "\n" + "Email: " + contact.Email);
-
-            }
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("Contact Details" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Zip: " + contact.Zip + "\n" + "Email: " + contact.Email);
+            
         }
         public void EditContract(string name)
         {
@@ -48,7 +45,7 @@ namespace AddressBookProgram
                 if (contact.FirstName.Equals(name))
                 {
                     Console.WriteLine("Enter option to edit contact");
-                    Console.WriteLine("1:Address");
+                    Console.WriteLine("1:First name\n2:Last name\n3:Address\n4:City\n5:State\n6:Phone number\n7:Zip code\n8:Email Id");
                     int option = Convert.ToInt32(Console.ReadLine());
                     switch (option)
                     {
