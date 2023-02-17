@@ -24,6 +24,9 @@
                     addressBook.EditContract("Shivani");
                     addressBook.Display();
                     break;
+                default:
+                    Console.WriteLine("Please enter right option");
+                    break;
             }
         }
     }
