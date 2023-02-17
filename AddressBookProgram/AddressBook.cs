@@ -12,6 +12,7 @@ namespace AddressBookProgram
         List<Contact> contactList = new List<Contact>();
         public void CreateContact()
         {
+            Contact contact = new Contact();
             Console.WriteLine("Please add contact details");
             Console.WriteLine("Enter First Name");
             contact.FirstName = Console.ReadLine();
@@ -33,8 +34,12 @@ namespace AddressBookProgram
         }
         public void Display()
         {
-            Console.WriteLine("-------------------------------------");
-            Console.WriteLine("Contact Details" + "\n" + "FirstName: " +contact.FirstName +"\n" + "LastName: "+contact.LastName+"\n" + "Address: "+contact.Address+ "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " +contact.PhoneNumber + "\n" + "Zip: " + contact.Zip +"\n"+"Email: "+contact.Email);
+            foreach (var contact in contactList)
+            {
+                Console.WriteLine("-------------------------------------");
+                Console.WriteLine("Contact Details" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Zip: " + contact.Zip + "\n" + "Email: " + contact.Email);
+
+            }
         }
         public void EditContract(string name)
         {
