@@ -33,8 +33,9 @@ namespace AddressBookProgram
         }
         public void Display()
         {
-            Console.WriteLine("-------------------------------------");
-            Console.WriteLine("Contact Details" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Zip: " + contact.Zip + "\n" + "Email: " + contact.Email);  
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("Contact Details" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Zip: " + contact.Zip + "\n" + "Email: " + contact.Email);
+            Console.WriteLine("-------------------------------------------");
         }
         public void EditContract(string name)
         {
@@ -112,6 +113,7 @@ namespace AddressBookProgram
                 if(contacts.Count > 0)
                 {
                     Console.WriteLine("Duplicate Entry");
+                    Console.WriteLine("-------------------------------------------");
                 }
                 else
                 {
@@ -121,6 +123,22 @@ namespace AddressBookProgram
             else
             {
                 contactList.Add(contact);
+            }
+        }
+        public void SearchPersonBasedOnCityOrState(string city,string state)
+        {
+            if (contactList.Count > 0)
+            {
+                List<Contact> contacts1 = contactList.Where(c => (c.City == city || c.State == state)).ToList();
+                if(contacts1.Count > 0)
+                {
+                    Console.WriteLine("The person of that city or state is present");
+                    contactList.Add(contact);
+                }
+                else
+                {
+                    Console.WriteLine("the person of that city or state is not present");
+                }
             }
         }
     }
