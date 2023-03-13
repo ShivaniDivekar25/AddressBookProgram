@@ -10,7 +10,7 @@
             { 
                 AddressBook addressBook = new AddressBook();
                 Console.WriteLine("Please enter an option");
-                Console.WriteLine("1:Create contcat details\n2:Add new contact\n3:Edit contact\n4:Delete contact\n5:Add multiple contact\n6:Exit");
+                Console.WriteLine("1:Create contcat details\n2:Add new contact\n3:Edit contact\n4:Delete contact\n5:Add multiple contact\n6:No duplicate entry\n7:Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -36,6 +36,11 @@
                         addressBook.Display();
                         break;
                     case 6:
+                        addressBook.CreateContact();
+                        addressBook.NoDuplicateEntry("Shivani");
+                        addressBook.Display();
+                        break;
+                    case 7:
                         flag = false;
                         break;
                     default:
