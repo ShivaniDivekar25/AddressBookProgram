@@ -11,6 +11,31 @@ namespace AddressBookProgram
     {
         Contact contact = new Contact();
         List<Contact> contactList = new List<Contact>();
+        //public Dictionary<string, Contact> contactDict;
+        //public AddressBook()
+        //{
+        //    this.contactDict = new Dictionary<string, Contact>();
+        //}
+        //public void AddContact(string firstName,string lastName, string address, string city, string state,string phoneNumber,string Zip,string email)
+        //{
+        //    Contact newContact = new Contact(firstName, lastName, address, city, state, phoneNumber, Zip, email);
+        //    this.contactDict.Add(firstName, newContact);
+        //}
+        //public void ShowList()
+        //{
+        //    foreach (var contact in contactDict)
+        //    {
+        //        Console.WriteLine("FirstName: " + contact.Value.FirstName);
+        //        Console.WriteLine("LastName: " + contact.Value.LastName);
+        //        Console.WriteLine("Address: " + contact.Value.Address);
+        //        Console.WriteLine("City: " + contact.Value.City);
+        //        Console.WriteLine("State: " + contact.Value.State);
+        //        Console.WriteLine("ZipCode: " + contact.Value.Zip);
+        //        Console.WriteLine("Phone Number: " + contact.Value.PhoneNumber);
+        //        Console.WriteLine("Email: " + contact.Value.Email);
+        //        Console.WriteLine("-----------------");
+        //    }
+        //}
         public void CreateContact()
         {
             Console.WriteLine("Please add contact details");
@@ -38,7 +63,7 @@ namespace AddressBookProgram
             Console.WriteLine("Contact Details" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Zip: " + contact.Zip + "\n" + "Email: " + contact.Email);
             Console.WriteLine("-------------------------------------------");
         }
-        public void EditContract(string name)
+        public void EditContact(string name)
         {
             foreach (var contact in contactList)
             {
@@ -165,5 +190,20 @@ namespace AddressBookProgram
             count++;
             Console.WriteLine("The count of persons contact is: " + count);
         }
+        //public void SortContactsBasedOnPersonsName()
+        //{
+        //    // if(contact.FirstName == firstName)
+        //    //{
+        //    contactList.Sort();
+        //    SortedList<string, List<Contact>> sortedList = new SortedList<string, List<Contact>>();
+        //    sortedList.Add(FirstName, contactList);
+        //    if (sortedList.ContainsKey(contact.FirstName))
+        //    {
+        //        contactList.Sort();
+        //    }
+        //    Console.WriteLine();
+        //    //}
+        //}
+
     }
 }
