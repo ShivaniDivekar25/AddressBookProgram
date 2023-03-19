@@ -24,10 +24,10 @@ namespace AddressBookProgram
             this.contactList = new List<Contact>(contactDict2.Values);
         }
 
-        public void addContact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
+        public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
         {
             Contact newContact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
-            //this.contactDict.Add(firstName, newContact);
+            this.contactDict.Add(firstName, newContact);
             this.contactDict.Add(city, newContact);
             this.contactDict2.Add(state, newContact);
             this.contactDict1.Add(zip, newContact);
