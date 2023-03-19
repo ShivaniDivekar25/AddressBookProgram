@@ -11,7 +11,7 @@
                 AddressBook addressBook = new AddressBook();
                 ContactBook contactBook = new ContactBook();
                 Console.WriteLine("Please enter an option");
-                Console.WriteLine("1:Create contact details\n2:Add new contact\n3:Edit contact\n4:Delete contact\n5:Add multiple contact\n6:No duplicate entry\n7:Search person based on city or state\n8:Search person number based on city or state\n9:Store contacts in dictionary\n10:Sort contact by name\n11:Exit");
+                Console.WriteLine("1:Create contact details\n2:Add new contact\n3:Edit contact\n4:Delete contact\n5:Add multiple contact\n6:No duplicate entry\n7:Search person based on city or state\n8:Search person number based on city or state\n9:Store contacts in dictionary\n10:Sort contact by name\n11:Sort contact by city or state or zip\n12:Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -43,7 +43,7 @@
                         break;
                     case 7:
                         addressBook.CreateContact();
-                        addressBook.SearchPersonBasedOnCityOrState("Pune","Maharastra");
+                        addressBook.SearchPersonBasedOnCityOrState("Pune","Kerla");
                         addressBook.Display();
                         break;
                     case 8:
@@ -61,6 +61,16 @@
                         contactBook.SortContactByName();
                         break;
                     case 11:
+                        contactBook.addContact("Shivani", "Divekar", "Dange Chauk", "Pune", "Maharastra", 4006, "8983922703", "Shivani@gmail.com");
+                        contactBook.addContact("Malhar", "Divekar", "Karve Nagar", "Kolhapur", "Kerla", 2056, "8983922708", "Malhar@gmail.com");
+                        contactBook.SortContactByCity();
+                        Console.WriteLine("-------------------");
+                        contactBook.SortContactByState();
+                        Console.WriteLine("-------------------");
+                        contactBook.SortContactByZip();
+                        Console.WriteLine("_------------------");
+                        break;
+                    case 12:
                         flag = false;
                         break;
                     default:
