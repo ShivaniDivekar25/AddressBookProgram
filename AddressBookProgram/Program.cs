@@ -9,8 +9,9 @@
             while (flag)
             { 
                 AddressBook addressBook = new AddressBook();
+                ContactBook contactBook = new ContactBook();
                 Console.WriteLine("Please enter an option");
-                Console.WriteLine("1:Create contact details\n2:Add new contact\n3:Edit contact\n4:Delete contact\n5:Add multiple contact\n6:No duplicate entry\n7:Search person based on city or state\n8:Search person number based on city or state\n9:Store contacts in dictionary\n10:Exit");
+                Console.WriteLine("1:Create contact details\n2:Add new contact\n3:Edit contact\n4:Delete contact\n5:Add multiple contact\n6:No duplicate entry\n7:Search person based on city or state\n8:Search person number based on city or state\n9:Store contacts in dictionary\n10:Sort contact by name\n11:Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -51,11 +52,16 @@
                         addressBook.Display();
                         break;
                     case 9:
-                        ContactBook contactBook = new ContactBook();
-                        contactBook.addContact("Shivani","Divekar","Dange Chauk","Pune","Maharastra",1236,"8983922703","Shivani@gmail.com");
-                        contactBook.showList();
+                        contactBook.addContact("Shivani", "Divekar", "Dange Chauk", "Pune", "Maharastra", 1236, "8983922703", "Shivani@gmail.com");
+                        contactBook.ShowList();
                         break;
                     case 10:
+                        contactBook.addContact("Shivani", "Divekar", "Dange Chauk", "Pune", "Maharastra", 1236, "8983922703", "Shivani@gmail.com");
+                        contactBook.addContact("Malhar", "Divekar", "Karve Nagar", "Kolhapur", "Maharastra", 1236, "8983922708", "Malhar@gmail.com");
+                        //contactBook.SortContactByName();
+                        contactBook.SortContactByCity();
+                        break;
+                    case 11:
                         flag = false;
                         break;
                     default:

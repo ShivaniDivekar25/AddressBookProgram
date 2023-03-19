@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,20 +10,22 @@ namespace AddressBookProgram
     public class ContactBook
     {
         public Dictionary<string, Contact> contactDict;
+        public List<Contact> contactList;
 
         public ContactBook()
         {
             this.contactDict = new Dictionary<string, Contact>();
+            this.contactList = new List<Contact>(contactDict.Values);
         }
 
         public void addContact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
         {
             Contact newContact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
-            this.contactDict.Add(firstName, newContact);
-
+            //this.contactDict.Add(firstName, newContact);
+            this.contactDict.Add(city, newContact);
+            //this.contactDict.Add(state, newContact);
         }
-
-        public void showList()
+        public void ShowList()
         {
             foreach (var contact in contactDict)
             {
@@ -45,7 +48,6 @@ namespace AddressBookProgram
                 {
                     contactDict.Remove(contact.Key);
                     break;
-
                 }
             }
         }
@@ -101,6 +103,53 @@ namespace AddressBookProgram
                 {
                     Console.WriteLine("The contact is not found");
                 }
+            }
+        }
+        public void SortContactByName()
+        {
+            var array = contactDict.Keys.ToArray();
+            Array.Sort(array);
+            foreach (var ele in array)
+            {
+                Console.WriteLine(ele);
+            }
+        }
+        public void SortContactByCity()
+        {
+            var array = contactDict.Keys.ToArray();
+            Array.Sort(array);
+            foreach (var ele in array)
+            {
+                Console.WriteLine(ele);
+            }
+        }
+        public void SortName()
+        {
+            SortByName sortByName = new SortByName();
+
+            contactList.Sort(sortByName);
+        }
+
+        public override string ToString()
+        {
+            try
+            {
+                foreach (var contact in contactList)
+                {
+                    return "First Name " + contact.FirstName + "\nLast Name " + contact.LastName;
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return default;
+        }
+        private class SortByName : IComparer<Contact>//UC11
+        {
+            public int Compare(Contact x, Contact y)
+            {
+                return string.Compare(x.FirstName, y.FirstName);
             }
         }
     }
