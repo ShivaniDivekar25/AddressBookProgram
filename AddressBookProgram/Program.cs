@@ -58,8 +58,7 @@
                     case 10:
                         contactBook.addContact("Shivani", "Divekar", "Dange Chauk", "Pune", "Maharastra", 1236, "8983922703", "Shivani@gmail.com");
                         contactBook.addContact("Malhar", "Divekar", "Karve Nagar", "Kolhapur", "Maharastra", 1236, "8983922708", "Malhar@gmail.com");
-                        //contactBook.SortContactByName();
-                        contactBook.SortContactByCity();
+                        contactBook.SortContactByName();
                         break;
                     case 11:
                         flag = false;
